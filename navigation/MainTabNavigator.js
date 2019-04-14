@@ -3,9 +3,9 @@ import { Platform } from 'react-native';
 import { createStackNavigator, createBottomTabNavigator } from 'react-navigation';
 
 import TabBarIcon from '../components/TabBarIcon';
-import HomeScreen from '../screens/HomeScreen';
-import LinksScreen from '../screens/LinksScreen';
-import SettingsScreen from '../screens/SettingsScreen';
+import HomeScreen from '../screens/homeScreen';
+import SavedScreen from '../screens/savedScreen';
+import SettingsScreen from '../screens/settingsScreen';
 
 const HomeStack = createStackNavigator({
   Home: HomeScreen,
@@ -25,12 +25,12 @@ HomeStack.navigationOptions = {
   ),
 };
 
-const LinksStack = createStackNavigator({
-  Links: LinksScreen,
+const SavedStack = createStackNavigator({
+  Saved: SavedScreen,
 });
 
-LinksStack.navigationOptions = {
-  tabBarLabel: 'Links',
+SavedStack.navigationOptions = {
+  tabBarLabel: 'Saved',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
@@ -55,6 +55,6 @@ SettingsStack.navigationOptions = {
 
 export default createBottomTabNavigator({
   HomeStack,
-  LinksStack,
+  SavedStack,
   SettingsStack,
 });
