@@ -1,90 +1,84 @@
-import { Platform, StyleSheet } from "react-native";
+import { Dimensions, Platform, StyleSheet } from "react-native";
+const SCREEN_WIDTH = Dimensions.get('window').width;
+const SCREEN_HEIGHT = Dimensions.get('window').height;
 
 export default StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-  },
-  developmentModeText: {
-    marginBottom: 20,
-    color: 'rgba(0,0,0,0.4)',
-    fontSize: 14,
-    lineHeight: 19,
-    textAlign: 'center',
+    backgroundColor: "#4285F4",
   },
   contentContainer: {
-    paddingTop: 30,
+    backgroundColor: "#f2f2f2",
+    flex: 1
   },
-  welcomeContainer: {
-    alignItems: 'center',
-    marginTop: 10,
-    marginBottom: 20,
+  homeHeaderContainer: {
+    backgroundColor: "#4285F4",
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "center"
   },
-  welcomeImage: {
-    width: 100,
-    height: 80,
-    resizeMode: 'contain',
-    marginTop: 3,
-    marginLeft: -10,
+  homeHeader: {
+    color: "white",
+    fontSize: 20,
+    paddingVertical: 15,
+    textAlign: "center"
   },
-  getStartedContainer: {
-    alignItems: 'center',
-    marginHorizontal: 50,
+  inputButton: {
+    flex: 1,
+    justifyContent: "center",
+    paddingVertical: 7,
   },
-  homeScreenFilename: {
-    marginVertical: 7,
+  inputButtonIcon: {
+    textAlign: "center"
   },
-  codeHighlightText: {
-    color: 'rgba(96,100,109, 0.8)',
+  inputButtonText: {
+    textAlign: "center",
+    fontSize: 12,
+    color: "#555656",
+    paddingHorizontal: 10,
   },
-  codeHighlightContainer: {
-    backgroundColor: 'rgba(0,0,0,0.05)',
-    borderRadius: 3,
-    paddingHorizontal: 4,
+  inputButtonsContainer: {
+    display: "flex",
+    flexDirection: "row"
   },
-  getStartedText: {
+  language: {
+    color: "#4285F4",
+    flex: 1,
     fontSize: 17,
-    color: 'rgba(96,100,109, 1)',
-    lineHeight: 24,
-    textAlign: 'center',
+    textAlign: "center",
   },
-  tabBarInfoContainer: {
-    position: 'absolute',
-    bottom: 0,
-    left: 0,
-    right: 0,
-    ...Platform.select({
-      ios: {
-        shadowColor: 'black',
-        shadowOffset: { height: -3 },
-        shadowOpacity: 0.1,
-        shadowRadius: 3,
-      },
-      android: {
-        elevation: 20,
-      },
-    }),
-    alignItems: 'center',
-    backgroundColor: '#fbfbfb',
-    paddingVertical: 20,
+  languageButton: {
+    alignItems: "center",
+    flex: 1,
   },
-  tabBarInfoText: {
-    fontSize: 17,
-    color: 'rgba(96,100,109, 1)',
-    textAlign: 'center',
-  },
-  navigationFilename: {
-    marginTop: 5,
-  },
-  helpContainer: {
-    marginTop: 15,
-    alignItems: 'center',
-  },
-  helpLink: {
+  languagesContainer: {
+    alignItems: "center",
+    backgroundColor: "#fff",
+    borderBottomColor: "#727272",
+    borderBottomWidth: StyleSheet.hairlineWidth,
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "center",
     paddingVertical: 15,
   },
-  helpLinkText: {
-    fontSize: 14,
-    color: '#2e78b7',
+  bold: {
+    fontWeight: "500"
   },
+  swapButton: {
+    alignContent: "center"
+  },
+  textInput: {
+    display: "flex",
+    fontSize: 17,
+    color: "#727272",
+    marginVertical: 10,
+    maxHeight: SCREEN_HEIGHT * 0.12,
+    minHeight: SCREEN_HEIGHT * 0.12,
+    paddingHorizontal: 30,
+  },
+  textInputContainer: {
+    backgroundColor: "#fff",
+    borderBottomColor: "#727272",
+    borderBottomWidth: StyleSheet.hairlineWidth,
+  }
 });
