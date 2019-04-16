@@ -16,11 +16,7 @@ HomeStack.navigationOptions = {
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
-      name={
-        Platform.OS === 'ios'
-          ? "md-home"
-          : "md-home"
-      }
+      name={"md-home"}
     />
   ),
 };
@@ -34,7 +30,7 @@ SavedStack.navigationOptions = {
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
-      name={Platform.OS === 'ios' ? 'md-star' : 'md-link'}
+      name={"md-star"}
     />
   ),
 };
@@ -48,7 +44,7 @@ SettingsStack.navigationOptions = {
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
-      name={Platform.OS === 'ios' ? 'md-settings' : 'md-options'}
+      name={"md-settings"}
     />
   ),
 };
