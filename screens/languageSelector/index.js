@@ -1,10 +1,13 @@
 import { connect } from "react-redux";
-import { getTranslation } from "../../actions/api/translate";
+import {
+  selectSourceLang,
+  selectTargetLang
+} from "../../actions/languages.actions";
 import {
   sourceLang,
   targetLang
 } from "../../selectors/languages.selector.js";
-import HomeScreen from "./homeScreen";
+import LanguageSelector from "./languageSelector";
 
 const mapStateToProps = (state) => ({
   sourceLang: sourceLang(state),
@@ -12,10 +15,11 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  getTranslation: (options) => dispatch(getTranslation(options))
+  selectSourceLang: (options) => dispatch(selectSourceLang(options)),
+  selectTargetLang: (options) => dispatch(selectTargetLang(options))
 });
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(HomeScreen);
+)(LanguageSelector);

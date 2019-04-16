@@ -1,4 +1,5 @@
 export default {
+  "Detect language": "auto",
   "Afrikaans" : "af",
   "Albanian" : "sq",
   "Arabic" : "ar",

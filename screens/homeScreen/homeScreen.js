@@ -13,6 +13,7 @@ import {
   TextInput,
 } from 'react-native';
 import styles from "../../styles/homeScreen.styles";
+import languagesDictionary from "../../constants/languagesDictionary";
 
 export default class HomeScreen extends React.Component {
   static navigationOptions = {
@@ -27,7 +28,8 @@ export default class HomeScreen extends React.Component {
   }
 
   render() {
-    const { getTranslation } = this.props;
+    const { getTranslation, navigation, sourceLang, targetLang } = this.props;
+    const { navigate } = navigation;
     const { inputValue } = this.state;
     return (
       <SafeAreaView style={styles.container}>
@@ -39,8 +41,13 @@ export default class HomeScreen extends React.Component {
         </View>
         <View style={styles.contentContainer}>
           <View style={styles.languagesContainer}>
-            <TouchableOpacity style={styles.languageButton}>
-              <Text style={styles.language}>Korean</Text>
+            <TouchableOpacity
+              style={styles.languageButton}
+              onPress={() => {
+                navigate("LanguageSelector", { name: "LanguageSelector" })
+              }}
+            >
+              <Text style={styles.language}>{sourceLang}</Text>
             </TouchableOpacity>
             <TouchableOpacity>
               <Icon.Ionicons
@@ -50,8 +57,13 @@ export default class HomeScreen extends React.Component {
                 style={styles.swapButton}
               />
             </TouchableOpacity>
-            <TouchableOpacity style={styles.languageButton}>
-              <Text style={styles.language}>English</Text>
+            <TouchableOpacity
+              style={styles.languageButton}
+              onPress={() => {
+                navigate("LanguageSelector", { name: "LanguageSelector" })
+              }}
+            >
+              <Text style={styles.language}>{targetLang}</Text>
             </TouchableOpacity>
           </View>
           <View style={styles.textInputContainer}>
@@ -59,8 +71,8 @@ export default class HomeScreen extends React.Component {
               onChangeText={(inputValue) => this.setState({ inputValue })}
               onSubmitEditing={() => {
                 getTranslation({
-                  sourceLang: "auto",
-                  targetLang: "ko",
+                  sourceLang: languagesDictionary[sourceLang],
+                  targetLang: languagesDictionary[targetLang],
                   sourceText: inputValue
                 });
               }}
