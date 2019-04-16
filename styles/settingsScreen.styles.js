@@ -18,11 +18,21 @@ export default StyleSheet.create({
     color: "black",
     flex: 1,
   },
-  settingsButton: {
-    backgroundColor: "blue",
-  },
+
   bigSettingsContainer: {
     backgroundColor: "#f2f2f2",
+  },
+  clearHistoryButton: {
+    backgroundColor: "#d34428",
+    marginHorizontal: 13,
+    padding: 5,
+    marginTop: 10,
+    marginBottom: 15,
+  },
+  clearHistoryButtonText: {
+    color: "#fff",
+    textAlign: "center",
+    fontSize: 20,
   },
   settingDetails: {
     justifyContent: "center"
