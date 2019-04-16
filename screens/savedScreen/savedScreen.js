@@ -1,7 +1,7 @@
 import React from 'react';
 import { FlatList, View, ScrollView, StyleSheet, Text } from 'react-native';
 import { Icon } from "expo";
-import styles from "../styles/savedScreen.styles";
+import styles from "../../styles/savedScreen.styles";
 
 export default class SavedScreen extends React.Component {
   static navigationOptions = {

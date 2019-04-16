@@ -1,7 +1,7 @@
 import React from 'react';
 import { View,Text,TouchableOpacity, ScrollView } from "react-native";
 import { Icon } from "expo";
-import styles from "../styles/settingsScreen.styles";
+import styles from "../../styles/settingsScreen.styles";
 
 export default class SettingsScreen extends React.Component {
   static navigationOptions = {

@@ -12,7 +12,7 @@ import {
   View,
   TextInput,
 } from 'react-native';
-import styles from "../styles/homeScreen.styles";
+import styles from "../../styles/homeScreen.styles";
 
 export default class HomeScreen extends React.Component {
   static navigationOptions = {
@@ -22,17 +22,13 @@ export default class HomeScreen extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      inputValue: 'Enter text'
+      inputValue: ""
     }
-    this.updateInputValue = this.updateInputValue.bind(this);
-  }
-
-  updateInputValue(e) {
-    e.preventDefault();
-    this.setState({ inputValue: e.target.value });
   }
 
   render() {
+    const { getTranslation } = this.props;
+    const { inputValue } = this.state;
     return (
       <SafeAreaView style={styles.container}>
         <View style={styles.homeHeaderContainer}>
@@ -60,10 +56,18 @@ export default class HomeScreen extends React.Component {
           </View>
           <View style={styles.textInputContainer}>
             <TextInput
-              onChange={(e) => this.updateInputValue(e)}
+              onChangeText={(inputValue) => this.setState({ inputValue })}
+              onSubmitEditing={() => {
+                getTranslation({
+                  sourceLang: "auto",
+                  targetLang: "ko",
+                  sourceText: inputValue
+                });
+              }}
               multiline={true}
+              placeholder={"Enter text"}
               style={styles.textInput}
-              value={this.state.inputValue}
+              value={inputValue}
             />
             <View style={styles.inputButtonsContainer}>
               <TouchableOpacity style={styles.inputButton}>
