@@ -28,7 +28,7 @@ export default class HomeScreen extends React.Component {
   }
 
   render() {
-    const { getTranslation, navigation, sourceLang, targetLang } = this.props;
+    const { state, getTranslation, navigation, sourceLang, targetLang, translation } = this.props;
     const { navigate } = navigation;
     const { inputValue } = this.state;
     return (
@@ -44,7 +44,7 @@ export default class HomeScreen extends React.Component {
             <TouchableOpacity
               style={styles.languageButton}
               onPress={() => {
-                navigate("LanguageSelector", { name: "LanguageSelector" })
+                navigate("SourceLanguageSelector", { name: "SourceLanguageSelector" })
               }}
             >
               <Text style={styles.language}>{sourceLang}</Text>
@@ -60,7 +60,7 @@ export default class HomeScreen extends React.Component {
             <TouchableOpacity
               style={styles.languageButton}
               onPress={() => {
-                navigate("LanguageSelector", { name: "LanguageSelector" })
+                navigate("TargetLanguageSelector", { name: "TargetLanguageSelector" })
               }}
             >
               <Text style={styles.language}>{targetLang}</Text>
@@ -120,6 +120,10 @@ export default class HomeScreen extends React.Component {
               </TouchableOpacity>
             </View>
           </View>
+            <View style={styles.downloadOffline}>
+            <Image source={require('../../assets/images/mobilehome.png')} />
+              <Text style={styles.instantTranslation}>Get instant translations with your camera by downloading an offline translation file.</Text>
+            </View>
         </View>
       </SafeAreaView>
     );

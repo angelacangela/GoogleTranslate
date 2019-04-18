@@ -11,6 +11,15 @@ export default StyleSheet.create({
     backgroundColor: "#f2f2f2",
     flex: 1
   },
+  downloadOffline: {
+    height: 210,
+    width: 395,
+    backgroundColor: "white",
+    marginBottom: 9,
+    marginLeft: 9,
+    marginTop: 9,
+    margin: "auto",
+  },
   homeHeaderContainer: {
     backgroundColor: "#4285F4",
     display: "flex",
@@ -22,6 +31,13 @@ export default StyleSheet.create({
     fontSize: 20,
     paddingVertical: 15,
     textAlign: "center"
+  },
+  instantTranslation: {
+    fontSize: 16,
+    color: "#7C7C7C",
+    paddingLeft: 20,
+    paddingRight: 20,
+    paddingTop: 24,
   },
   inputButton: {
     flex: 1,

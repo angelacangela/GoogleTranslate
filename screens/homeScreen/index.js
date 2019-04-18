@@ -4,11 +4,13 @@ import {
   sourceLang,
   targetLang
 } from "../../selectors/languages.selector.js";
+import { translation } from "../../selectors/translation.selector.js"
 import HomeScreen from "./homeScreen";
 
 const mapStateToProps = (state) => ({
   sourceLang: sourceLang(state),
-  targetLang: targetLang(state)
+  targetLang: targetLang(state),
+  translation: translation(state)
 });
 
 const mapDispatchToProps = (dispatch) => ({

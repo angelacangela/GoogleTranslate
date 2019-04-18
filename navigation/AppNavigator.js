@@ -1,12 +1,14 @@
 import React from 'react';
 import { createAppContainer, createSwitchNavigator } from 'react-navigation';
 
-import LanguageSelector from "../screens/languageSelector/index";
+import SourceLanguageSelector from "../screens/sourceLanguageSelector/index";
+import TargetLanguageSelector from "../screens/targetLanguageSelector/index";
 import MainTabNavigator from './MainTabNavigator';
 
 export default createAppContainer(createSwitchNavigator({
   // You could add another route here for authentication.
   // Read more at https://reactnavigation.org/docs/en/auth-flow.html
   Main: MainTabNavigator,
-  LanguageSelector: LanguageSelector,
+  SourceLanguageSelector: SourceLanguageSelector,
+  TargetLanguageSelector: TargetLanguageSelector
 }));
