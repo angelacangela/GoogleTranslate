@@ -12,6 +12,8 @@ export default StyleSheet.create({
     flex: 1
   },
   downloadOffline: {
+    display: "flex",
+    flexDirection: "row",
     height: 210,
     width: 395,
     backgroundColor: "white",
@@ -38,6 +40,7 @@ export default StyleSheet.create({
     paddingLeft: 20,
     paddingRight: 20,
     paddingTop: 24,
+    width: 280,
   },
   inputButton: {
     flex: 1,
@@ -79,6 +82,10 @@ export default StyleSheet.create({
   },
   bold: {
     fontWeight: "500"
+  },
+  offlineImg: {
+    height: 210,
+    width: 115,
   },
   swapButton: {
     alignContent: "center"

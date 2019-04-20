@@ -14,7 +14,7 @@ export const getTranslationFailure = createAction(GET_TRANSLATION_FAILURE);
 export const getTranslation = (options) => {
   const { sourceText, targetLang, sourceLang } = options;
   return async function(dispatch) {
-    dispatch(getTranslationRequest());
+    dispatch(getTranslationRequest({ targetLang }));
     let response;
     let responseJson;
     try {

@@ -8,6 +8,7 @@ import { translation } from "../../selectors/translation.selector.js"
 import HomeScreen from "./homeScreen";
 
 const mapStateToProps = (state) => ({
+  state: state,
   sourceLang: sourceLang(state),
   targetLang: targetLang(state),
   translation: translation(state)

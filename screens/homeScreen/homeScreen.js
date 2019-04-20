@@ -31,6 +31,7 @@ export default class HomeScreen extends React.Component {
     const { state, getTranslation, navigation, sourceLang, targetLang, translation } = this.props;
     const { navigate } = navigation;
     const { inputValue } = this.state;
+    console.log("state", state);
     return (
       <SafeAreaView style={styles.container}>
         <View style={styles.homeHeaderContainer}>
@@ -121,8 +122,12 @@ export default class HomeScreen extends React.Component {
             </View>
           </View>
             <View style={styles.downloadOffline}>
-            <Image source={require('../../assets/images/mobilehome.png')} />
-              <Text style={styles.instantTranslation}>Get instant translations with your camera by downloading an offline translation file.</Text>
+              <Image
+                style={styles.offlineImg}
+                source={require('../../assets/images/mobilehome.png')} />
+              <Text style={styles.instantTranslation}>
+                Get instant translations with your camera by downloading an offline translation file.
+              </Text>
             </View>
         </View>
       </SafeAreaView>
