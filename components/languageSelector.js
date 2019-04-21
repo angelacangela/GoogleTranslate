@@ -38,10 +38,10 @@ const LanguageSelector = ({
                     {item}
                   </Text>
                   <Icon.Ionicons
-                    name={"md-swap"}
+                    name={"md-download"}
                     size={26}
                     color={"gray"}
-                    style={styles.swapButton}
+                    style={styles.downloadButton}
                   />
                 </TouchableOpacity>
               </View>
