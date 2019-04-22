@@ -2,6 +2,7 @@ import React from 'react';
 import { Icon } from "expo";
 import {
   Image,
+  FlatList,
   Keyboard,
   Platform,
   SafeAreaView,
@@ -28,10 +29,21 @@ export default class HomeScreen extends React.Component {
   }
 
   render() {
-    const { state, getTranslation, navigation, sourceLang, targetLang, translation } = this.props;
+    const {
+      activeTranslation,
+      getTranslation,
+      isFetching,
+      navigation,
+      sourceLang,
+      state,
+      targetLang,
+      translation,
+      translationHistory
+    } = this.props;
     const { navigate } = navigation;
     const { inputValue } = this.state;
-    console.log("state", state);
+    console.log(isFetching, "===isFetching");
+    console.log(state, "====state")
     return (
       <SafeAreaView style={styles.container}>
         <View style={styles.homeHeaderContainer}>
@@ -75,7 +87,9 @@ export default class HomeScreen extends React.Component {
                   sourceLang: languagesDictionary[sourceLang],
                   targetLang: languagesDictionary[targetLang],
                   sourceText: inputValue
-                });
+                }).then(() => {
+                  this.setState({ inputValue: "" });
+                })
               }}
               multiline={true}
               placeholder={"Enter text"}
@@ -121,14 +135,25 @@ export default class HomeScreen extends React.Component {
               </TouchableOpacity>
             </View>
           </View>
-            <View style={styles.downloadOffline}>
-              <Image
-                style={styles.offlineImg}
-                source={require('../../assets/images/mobilehome.png')} />
-              <Text style={styles.instantTranslation}>
-                Get instant translations with your camera by downloading an offline translation file.
-              </Text>
-            </View>
+            <FlatList
+              data={translationHistory}
+              EmptyListComponent={() => (
+                <View style={styles.downloadOffline}>
+                  <Image
+                    style={styles.offlineImg}
+                    source={require('../../assets/images/mobilehome.png')} />
+                  <Text style={styles.instantTranslation}>
+                    Get instant translations with your camera by downloading an offline translation file.
+                  </Text>
+                </View>
+              )}
+              renderItem={({ item }) => (
+                <View>
+                  <Text>{item.translation}</Text>
+                </View>
+              )}
+              extraData={translationHistory}
+            />
         </View>
       </SafeAreaView>
     );

@@ -1,5 +1,5 @@
 import React from 'react';
-import { FlatList, Text, TouchableOpacity, View } from 'react-native';
+import { FlatList, SafeAreaView, Text, TouchableOpacity, View } from 'react-native';
 import { Icon } from "expo";
 import styles from "../../styles/languageSelector.styles";
 import LanguageSelector from "../../components/languageSelector";
@@ -16,13 +16,13 @@ export default class SourceLanguageSelector extends React.Component {
     const { navigation, selectSourceLang } = this.props;
     const { navigate } = navigation;
     return (
-      <View style={styles.container}>
+      <SafeAreaView style={styles.container}>
         <LanguageSelector
           navigate={navigate}
           onPress={selectSourceLang}
           sourceLang
         />
-      </View>
+      </SafeAreaView>
     );
   }
 }

@@ -4,14 +4,18 @@ import {
   sourceLang,
   targetLang
 } from "../../selectors/languages.selector.js";
-import { translation } from "../../selectors/translation.selector.js"
+import { activeTranslation, isFetching, translation, translationHistory } from "../../selectors/translation.selector.js"
 import HomeScreen from "./homeScreen";
 
-const mapStateToProps = (state) => ({
-  state: state,
+const mapStateToProps = (state, ownProps) => ({
+  ...ownProps,
+  activeTranslation: activeTranslation(state),
+  isFetching: isFetching(state),
   sourceLang: sourceLang(state),
+  state,
   targetLang: targetLang(state),
-  translation: translation(state)
+  translation: translation(state),
+  translationHistory: translationHistory(state)
 });
 
 const mapDispatchToProps = (dispatch) => ({

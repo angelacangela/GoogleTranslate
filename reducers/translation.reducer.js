@@ -8,20 +8,33 @@ import {
 export default handleActions(
   {
     [GET_TRANSLATION_REQUEST]: (state, { payload }) => {
-      const { targetLang } = payload;
+      const { targetLang, sourceLang, sourceText } = payload;
       return {
         ...state,
-        targetLang,
+        activeTranslation: {
+          sourceLang,
+          sourceText,
+          targetLang,
+        },
         isFetching: true
       }
     },
     [GET_TRANSLATION_SUCCESS]: (state, { payload }) => {
+      const translation = payload[0][0][0];
       return {
         ...state,
-        translation: payload[0][0][0],
-        sourceLang: payload[8][0][0],
-        sourceText: payload[0][0][1],
-        isFetching: false
+        activeTranslation: {
+          ...state.activeTranslation,
+          translation
+        },
+        translationHistory: [
+          ...state.translationHistory,
+          {
+            ...state.activeTranslation,
+            translation
+          }
+        ],
+        isFetching: false,
       }
     },
     [GET_TRANSLATION_FAILURE]: (state) => ({
@@ -30,6 +43,8 @@ export default handleActions(
     })
   },
   {
+    activeTranslation: {},
+    translationHistory: [],
     isFetching: false
   }
 );

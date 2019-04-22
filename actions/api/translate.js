@@ -12,16 +12,14 @@ export const getTranslationSuccess = createAction(GET_TRANSLATION_SUCCESS);
 export const getTranslationFailure = createAction(GET_TRANSLATION_FAILURE);
 
 export const getTranslation = (options) => {
-  const { sourceText, targetLang, sourceLang } = options;
   return async function(dispatch) {
-    dispatch(getTranslationRequest({ targetLang }));
+    dispatch(getTranslationRequest(options));
     let response;
     let responseJson;
     try {
       response = await fetchTranslation(sourceText, targetLang, sourceLang);
       if (response.status >= 200 && response.status < 300) {
         responseJson = await response.json();
-        const translation = responseJson[0][0][0];
         dispatch(getTranslationSuccess(responseJson));
       } else {
         const err = await response.json();
