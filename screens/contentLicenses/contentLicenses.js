@@ -7,7 +7,7 @@ export default class ContentLicenses extends React.Component {
   render() {
     return (
 <View>
-<Text style={styles.savedEmptyText}>
+<Text style={styles.contentLicenses}>
           Star a translation to see it here.
         </Text>
 </View>

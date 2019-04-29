@@ -7,7 +7,7 @@ export default class Help extends React.Component {
   render() {
     return (
 <View>
-<Text style={styles.savedEmptyText}>
+<Text style={styles.help}>
           Star a translation to see it here.
         </Text>
 </View>

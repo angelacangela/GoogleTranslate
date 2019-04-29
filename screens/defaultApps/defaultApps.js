@@ -7,7 +7,7 @@ export default class DefaultApps extends React.Component {
   render() {
     return (
 <View>
-<Text style={styles.savedEmptyText}>
+<Text style={styles.defaultApps}>
           Star a translation to see it here.
         </Text>
 </View>

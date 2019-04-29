@@ -6,11 +6,11 @@ import styles from "../../styles/termsOfService.styles";
 export default class TermsOfService extends React.Component {
   render() {
     return (
-<View>
-<Text style={styles.savedEmptyText}>
-          Star a translation to see it here.
+      <View>
+        <Text style={styles.termsOfService}>
+        Star a translation to see it here.
         </Text>
-</View>
+      </View>
 );
 }
 }

@@ -4,9 +4,10 @@ import { Icon } from "expo";
 import styles from "../../styles/offlineTranslation.styles";
 
 export default class OfflineTranslation extends React.Component {
-render () {
-return (
-</View>
-)
-}
-}
+  render () {
+  return (
+  <View>
+  </View>
+  );
+  }
+  }

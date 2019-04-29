@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from "react-redux";
-import SavedScreen from "./savedScreen";
+import Feedback from "./feedback";
 
 const mapStateToProps = () => ({});
 
@@ -9,4 +9,4 @@ const mapDispatchToProps = () => ({});
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(SavedScreen);
+)(Feedback);
