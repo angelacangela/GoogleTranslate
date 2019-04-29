@@ -48,7 +48,7 @@ export default class HomeScreen extends React.Component {
       <SafeAreaView style={styles.container}>
         <View style={styles.homeHeaderContainer}>
           <Text style={[styles.bold, styles.homeHeader]}>
-            Google
+            Angela
           </Text>
           <Text style={styles.homeHeader}> Translate</Text>
         </View>
